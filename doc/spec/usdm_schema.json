@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+
+	"definitions": {
+		"idType": {
+			"type": "string"
+		},
+		"sortType": {
+			"type": "integer"
+		},
+		"NOType": {
+			"type": "string"
+		},
+		"ritchcontentType": {
+			"type": "string"
+		},
+		"reasonType": {
+			"type": "object",
+			"properties": {
+				"id"          : { "$ref": "#/definitions/idType" },
+				"sort"        : { "$ref": "#/definitions/sortType" },
+				"NO"          : { "$ref": "#/definitions/NOType" },
+				"ritchcontent": { "$ref": "#/definitions/ritchcontentType" }
+			},
+			"required": ["id","sort"]
+		},
+		"descType": {
+			"type": "object",
+			"properties": {
+				"id"          : { "$ref": "#/definitions/idType" },
+				"sort"        : { "$ref": "#/definitions/sortType" },
+				"NO"          : { "$ref": "#/definitions/NOType" },
+				"ritchcontent": { "$ref": "#/definitions/ritchcontentType" }
+			},
+			"required": ["id","sort"]
+		},
+		"reqspecType": {
+			"type": "object",
+			"properties": {
+				"id"          : { "$ref": "#/definitions/idType" },
+				"sort"        : { "$ref": "#/definitions/sortType" },
+				"NO"          : { "$ref": "#/definitions/NOType" },
+				"ritchcontent": { "$ref": "#/definitions/ritchcontentType" },
+				"group"       : { "$ref": "#/definitions/groupType" },
+				"reqspec"     : { "$ref": "#/definitions/reqspecType" },
+				"reason"      : { "$ref": "#/definitions/reasonType" },
+				"desc"        : { "$ref": "#/definitions/descType" }
+			},
+			"required": ["id","sort"]
+		},
+		"groupType": {
+			"type": "object",
+			"properties": {
+				"id"          : { "$ref": "#/definitions/idType" },
+				"sort"        : { "$ref": "#/definitions/sortType" },
+				"NO"          : { "$ref": "#/definitions/NOType" },
+				"ritchcontent": { "$ref": "#/definitions/ritchcontentType" },
+				"group"       : { "$ref": "#/definitions/groupType" },
+				"reqspec"     : { "$ref": "#/definitions/reqspecType" }
+			},
+			"required": ["id","sort"]
+		},
+		"usdmType": {
+			"type": "object",
+			"properties": {
+				"group"       : { "$ref": "#/definitions/groupType" }
+			}
+		}
+	}
+}
